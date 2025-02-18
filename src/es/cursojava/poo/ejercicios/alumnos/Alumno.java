@@ -14,6 +14,12 @@ public class Alumno {
 
 	}
 
+	public Alumno(String nombre, double notaMedia) {
+		this.nombre = nombre;
+		this.notaMedia = notaMedia;
+
+	}
+
 	public Alumno(String nombre, String apellidos, int edad, double notaMedia, String email) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -97,8 +103,7 @@ public class Alumno {
 
 	@Override
 	public String toString() {
-		return "Alumno [nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad + ", notaMedia=" + notaMedia
-				+ ", email=" + email + ", asignaturas=" + Arrays.toString(asignaturas) + "]";
+		return "El Alumno: " + nombre + ", tiene una notaMedia de: " + notaMedia + ".";
 	}
 
 }
