@@ -1,22 +1,24 @@
 package es.cursojava.colecciones.ejercicios.ejercicio14;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import es.cursojava.poo.ejercicios.alumnos.Alumno;
 
-public class Colegio extends Ejercicio14Parte1 {
+public class Colegio {
 
     private String nombre;
     private String direccion;
-    private Map<String, List<Alumno>> colegios;
+    private Map<String, List<Alumno>> aulas;
 
-    public Colegio(String nombre, String direccion, Map<String, List<Alumno>> colegios) {
+    public Colegio(String nombre, String direccion, Map<String, List<Alumno>> aulas) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.colegios = colegios;
+        this.aulas = aulas;
     }
 
     public String getNombre() {
@@ -35,33 +37,66 @@ public class Colegio extends Ejercicio14Parte1 {
         this.direccion = direccion;
     }
 
-    public Map<String, List<Alumno>> getColegios() {
-        return colegios;
+    public Map<String, List<Alumno>> getAulas() {
+        return aulas;
     }
 
-    public void setColegios(Map<String, List<Alumno>> colegio) {
-        this.colegios = colegio;
+    public void setAulas(Map<String, List<Alumno>> aulas) {
+        this.aulas = aulas;
     }
-
 
     public static void main(String[] args) {
 
+        // Creación de los alumnos utilizando el metodo generarAlumnos que está en la
+        // clase del E14P1
+        List<Alumno> alumnos = Ejercicio14Parte1.generarAlumnos();
+
+        // Mapa del primer colegio
         Map<String, List<Alumno>> colegio1 = new LinkedHashMap<>();
-        colegio1.put("Aula1", null);
-        Colegio colegioGetafe = new Colegio("Colegio1", "Getafe Central", colegio1);
+        colegio1.put("Aula1", alumnos.subList(0, 2));
+        Colegio colegioGetafe = new Colegio("Salesiano", "Getafe Central", colegio1);
 
+
+        // Mapa del segundo colegio
         Map<String, List<Alumno>> colegio2 = new LinkedHashMap<>();
-        Colegio colegioLeganes = new Colegio("Colegio2", "Leganes Central", colegio2);
-        colegio1.put("Aula1", null);
+        colegio2.put("Aula2", alumnos.subList(2, 4));
+        Colegio colegioLeganes = new Colegio("El Pilar", "Leganes Central", colegio2);
 
+        // Mapa del tercer colegio
         Map<String, List<Alumno>> colegio3 = new LinkedHashMap<>();
-        Colegio colegioFuenlabrada = new Colegio("Colegio3", "Fuenlabrada Central", colegio3);
-        colegio1.put("Aula1", null);
+        colegio3.put("Aula3", alumnos.subList(4, 6));
+        Colegio colegioFuenlabrada = new Colegio("San Francisco de Sales", "Fuenlabrada Central",
+                colegio3);
 
         List<Colegio> colegios = new ArrayList<>();
         colegios.add(colegioGetafe);
         colegios.add(colegioLeganes);
         colegios.add(colegioFuenlabrada);
 
+        for (Colegio colegio : colegios) {
+            System.out
+                    .println("El colegio " + colegio.getNombre() + ", tiene como dirección: " + colegio.getDireccion());
+            // Utilizamos este metodo para tener los valores pero no se relacionan con el
+            // ejercicio ya que pide coherencia.
+            // System.out.println(colegio.getAulas().values());
+
+            Set<String> aulasTotales = colegio.getAulas().keySet();
+
+            for (String aula : aulasTotales) {
+                System.out.println("Recorriendo el aula... " + aula);
+                Collection<List<Alumno>> collectionListaAlumno = colegio.getAulas().values();
+                for (List<Alumno> alumnosLista : collectionListaAlumno) {
+                    for (Alumno alumnitos : alumnosLista) {
+                        System.out.println("El alumno " +
+                                alumnitos.getNombre() + ", de apellido " + alumnitos.getApellidos()
+                                + ", tiene la nota media de: " + alumnitos.getNotaMedia());
+                    }
+
+                }
+
+            }
+        }
+
     }
+
 }
