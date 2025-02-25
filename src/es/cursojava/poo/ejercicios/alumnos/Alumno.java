@@ -31,8 +31,20 @@ public class Alumno {
 	}
 
 	public Alumno(String nombre, String apellidos, int edad, double notaMedia,
-			String email, String[] asignaturas) throws NotaInvalidaException, IllegalArgumentException {
+			String email, String[] asignaturas) {
 		super();
+
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.edad = edad;
+		this.notaMedia = notaMedia;
+		this.email = email;
+		this.asignaturas = asignaturas;
+	}
+
+	public Alumno(String nombre, int edad, double notaMedia) throws NotaInvalidaException {
+		// A pesar de de que el método o constructor no tenga el super(); se está llamando
+		// al constructor de la clase padre (Object) por defecto.
 
 		if (edad <= 0) {
 			throw new IllegalArgumentException("La edad debe ser mayor que 0.");
@@ -42,11 +54,8 @@ public class Alumno {
 			throw new NotaInvalidaException("La nota debe estar en el rango de 0 a 10.");
 		}
 		this.nombre = nombre;
-		this.apellidos = apellidos;
 		this.edad = edad;
 		this.notaMedia = notaMedia;
-		this.email = email;
-		this.asignaturas = asignaturas;
 	}
 
 	public String getNombre() {

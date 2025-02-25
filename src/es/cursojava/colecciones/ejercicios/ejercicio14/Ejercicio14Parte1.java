@@ -27,7 +27,7 @@ public class Ejercicio14Parte1 {
         System.out.println("=================================");
         e14p1.mostrarInfoAlumnos(listaAlumnos1);
     }
-    static List<Alumno> generarAlumnos (int numAlumnos){ 
+    public static List<Alumno> generarAlumnos (int numAlumnos){ 
         List<Alumno> listaAlumnos = new CopyOnWriteArrayList<>();
 
         for (int i = 0; i < numAlumnos; i++) {
