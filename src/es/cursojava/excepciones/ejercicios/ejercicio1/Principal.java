@@ -30,6 +30,9 @@ public class Principal {
             }
 
             System.out.println("Numeros de alumnos guardados: " + alumnos.size());
+            for (Alumno alumno : alumnos) {
+                System.out.println(alumno);
+            }
         }
     }
 }
