@@ -2,7 +2,6 @@ package es.cursojava.excepciones.ejercicios.ejercicio1;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import es.cursojava.inicio.funciones.Utilidades;
 import es.cursojava.poo.ejercicios.alumnos.Alumno;
