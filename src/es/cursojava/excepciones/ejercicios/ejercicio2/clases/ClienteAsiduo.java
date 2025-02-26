@@ -25,8 +25,8 @@ public class ClienteAsiduo extends Cliente implements TomarCafe {
     }
 
     @Override
-    public void tomarCafe() {
-        System.out.println("El cliente asiduo está tomando café."); // TODO Auto-generated method stub
+    public void tomarCafe(TazaCafe tazaCafe) {
+        System.out.println("El cliente asiduo está tomando" + tazaCafe); // TODO Auto-generated method stub
 
     }
 

@@ -17,8 +17,8 @@ public class Comensal extends Cliente implements TomarCafe {
     }
 
     @Override
-    public void tomarCafe() {
-        System.out.println("El comensal está tomando café."); // TODO Auto-generated method stub
+    public void tomarCafe(TazaCafe tazaCafe) {
+        System.out.println("El comensal está tomando " + tazaCafe); // TODO Auto-generated method stub
 
     }
 
