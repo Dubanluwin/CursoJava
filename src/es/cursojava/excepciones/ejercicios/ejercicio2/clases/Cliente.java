@@ -15,4 +15,8 @@ public abstract class Cliente {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public abstract boolean puedeTomarCafe(); // Se crea un metodo abstracto que devuelva boolean si las clases hijas
+                                              // pueden tomar cafe.
+
 }

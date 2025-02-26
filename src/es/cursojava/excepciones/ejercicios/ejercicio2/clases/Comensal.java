@@ -18,8 +18,16 @@ public class Comensal extends Cliente implements TomarCafe {
 
     @Override
     public void tomarCafe(TazaCafe tazaCafe) {
-        System.out.println("El comensal está tomando " + tazaCafe); // TODO Auto-generated method stub
+        System.out.println("El comensal está tomando " + tazaCafe);
 
+    }
+
+    @Override
+    public boolean puedeTomarCafe() {
+
+        // LOS COMENSALES SI PUEDEN TOMAR CAFÉ.
+
+        return true;
     }
 
     public boolean isTieneReserva() {
@@ -29,4 +37,5 @@ public class Comensal extends Cliente implements TomarCafe {
     public void setTieneReserva(boolean tieneReserva) {
         this.tieneReserva = tieneReserva;
     }
+
 }

@@ -1,6 +1,5 @@
 package es.cursojava.excepciones.ejercicios.ejercicio2.clases;
 
-import es.cursojava.excepciones.ejercicios.ejercicio1.NotaInvalidaException;
 import es.cursojava.excepciones.ejercicios.ejercicio2.excepciones.TooColdTemperatureException;
 import es.cursojava.excepciones.ejercicios.ejercicio2.excepciones.TooHotTemperatureException;
 

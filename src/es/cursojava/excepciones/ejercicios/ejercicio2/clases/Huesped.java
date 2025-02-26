@@ -22,4 +22,12 @@ public class Huesped extends Cliente {
         return "Huesped [dni=" + dni + "]";
     }
 
+    @Override
+    public boolean puedeTomarCafe() {
+
+        // lOS HUESPEDES NO PUEDEN TOMAR CAFÉ.
+
+        return false;
+    }
+
 }
